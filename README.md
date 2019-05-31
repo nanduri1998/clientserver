@@ -17,7 +17,7 @@
 <p>
 <code>gcc client.c -o client.out</code> or <code>cc client.c -o client.out</code>
 </p>
-<p>Then to run it on a specified port, pass port as argument</p>
+<p>Then to run it on a specified port, pass IP Address and port as argument</p>
 <p>
 <code>./client.out YOUR_IP_HERE 4000</code>
 </p>
