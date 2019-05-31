@@ -16,10 +16,11 @@ int main(int argc, char *argv[]){
     struct sockaddr_in serv_addr;
     struct hostent *server;
 
-    char buffer[256];
+    char buffer[256], filename[256];
     FILE *fp;
-
-    fp = fopen("test.txt", "r");
+    printf("Enter File Name to be Sent: ");
+    gets(filename);
+    fp = fopen(filename, "r");
     if(fp == NULL){
         error("ERROR: File not found");
     }
@@ -52,7 +53,13 @@ int main(int argc, char *argv[]){
     if(connect(sockfd,&serv_addr,sizeof(serv_addr)) < 0){
         error("ERROR in Connecting");
     }
-    printf("Sending File test.txt");
+    printf("Sending File %s", filename);
+    bzero(buffer, 256);
+    fgets(buffer, 255, filename);
+    n = write(sockfd, buffer, strlen(buffer));
+    if(n < 0){
+        error("ERROR: Write Failed");
+    }
     bzero(buffer, 256);
     fgets(buffer, 255, fp);
     n = write(sockfd, buffer, strlen(buffer));

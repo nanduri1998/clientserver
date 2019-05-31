@@ -13,7 +13,7 @@ void error(char *msg){
 
 int main(int argc, char *argv[]){
     int sockfd, newsockfd, portno, clilen;
-    char buffer[256];
+    char buffer[256], filename[256];
     struct sockaddr_in serv_addr, cli_addr;
     int n;
     FILE *fp;
@@ -56,10 +56,19 @@ int main(int argc, char *argv[]){
     if(n<0){
         error("Error in read");
     }
+    strcpy(filename, buffer);
+    
+    bzero(buffer, 256);
 
-    printf("File Read: %s\n", buffer);
+    n = read(newsockfd, buffer, 255);
+
+    if(n<0){
+        error("Error in read");
+    }
+
+    printf("File Read: %s\n", filename);
     puts(buffer);
-    fp = fopen("written.txt", "w");
+    fp = fopen(filename, "w");
     fprintf(fp, "%s", buffer);
     fclose(fp);
 
