@@ -1,4 +1,4 @@
-<h1>C Client Server Code</h1>
+<h1>C Client Server Code for Linux</h1>
 
 <p>Run this code only on <b>Linux</b> based systems</p>
 <hr>
@@ -23,3 +23,30 @@
 </p>
 <p><b>Note:</b> For testing on same PC, use localhost.</p>
 <p><b>Note:</b> Put test.txt file in client side</p>
+<hr>
+<hr>
+<h1>Client and Server code for Windows</h1>
+<p>Run this code only on <b>Windows</b> based systems</p>
+<hr>
+<h3>TCPserver</h3><hr>
+<p> To compile this, use the following commands </p>
+<p>
+  <code>gcc TCPserver.c -o server -lws2_32</code>
+</p>
+<p> Then for running the code 
+  <code>./server.exe</code>
+  the port is hardcoded as 55555 and the IP address is 127.0.0.1 
+</p>
+<h3>TCPclient</h3><hr>
+<p>To compile this, use following commands</p>
+<p>
+<code>gcc client.c -o client -lws2_32 </code>
+<p> Then for running the code 
+  <code>./client.exe</code>
+  the port is hardcoded as 55555 and the IP address is 127.0.0.1 
+</p>
+
+
+
+  
+  
