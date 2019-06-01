@@ -25,7 +25,7 @@
 <p><b>Note:</b> Put test.txt file in client side</p>
 <hr>
 <hr>
-<h1>Client and Server code for Windows</h1>
+<h1>C Client and Server code for Windows</h1>
 <p>Run this code only on <b>Windows</b> based systems</p>
 <hr>
 <h3>TCPserver</h3><hr>
